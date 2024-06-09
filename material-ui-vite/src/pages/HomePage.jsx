@@ -1,5 +1,5 @@
-import Copyright from "./Copyright"
-import ProTip from "./ProTip"
+import Copyright from "../components/Copyright"
+import ProTip from "../components/ProTip"
 import Container from "@mui/material/Container"
 import Typography from "@mui/material/Typography"
 import Box from "@mui/material/Box"
