@@ -68,6 +68,9 @@ function MyAppBar(props) {
                         {(!user.email) && (<MenuItem key='login' onClose={handleCloseMenu}>
                             <NavLink to={"/login"}>Login</NavLink>
                         </MenuItem>)}
+                        <MenuItem key="inspector" onClose={handleCloseMenu}>
+                            <NavLink to={"/inspector"}>Inspector</NavLink>
+                        </MenuItem>
                     </Menu>
                     <Typography
                         variant="h6"
@@ -121,6 +124,9 @@ function MyAppBar(props) {
                         {/* items inside menu */}
                         <MenuItem key="account" onClose={handleCloseMenu}>
                             <NavLink to={"/account"}>Account</NavLink>
+                        </MenuItem>
+                        <MenuItem key="library" onClose={handleCloseMenu}>
+                            <NavLink to={"/library"}>Library</NavLink>
                         </MenuItem>
                     </Menu>
                 </Toolbar>
