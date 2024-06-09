@@ -1,5 +1,4 @@
-import Copyright from "../components/Copyright"
-import ProTip from "../components/ProTip"
+// import Copyright from "../components/Copyright"
 import Container from "@mui/material/Container"
 import Typography from "@mui/material/Typography"
 import Box from "@mui/material/Box"
@@ -11,7 +10,8 @@ function HomePage(props) {
         <Container maxWidth="xl">
             <Box sx={{
                 my: 4,
-                // bgcolor:    theme.palette.secondary.main,
+                p: 2,
+                bgcolor:    theme.palette.secondary.main,
                 borderRadius: 4,
             }}>
                 <Typography variant="h4" component="h1" sx={{
@@ -20,8 +20,7 @@ function HomePage(props) {
                 }}>
                     Perspector
                 </Typography>
-                <ProTip />
-                <Copyright />
+                {/* <Copyright /> */}
             </Box>
         </Container>
     )

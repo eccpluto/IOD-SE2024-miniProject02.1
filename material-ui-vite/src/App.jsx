@@ -2,6 +2,7 @@ import * as React from 'react';
 import AppRoutes from './routes/AppRoutes';
 import MyAppBar from './components/MyAppBar';
 import { Toolbar } from '@mui/material';
+import './App.css'
 
 export default function App() {
   return (
