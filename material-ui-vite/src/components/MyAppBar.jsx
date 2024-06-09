@@ -61,14 +61,14 @@ function MyAppBar(props) {
                         onClose={handleCloseMenu}
                     >
                         {/* items inside menu */}
-                        <MenuItem key="home" onClose={handleCloseMenu}>
+                        <MenuItem key="home" onClick={handleCloseMenu}>
                             <NavLink to={"/"}>Home</NavLink>
                         </MenuItem>
                         {/* only enable login page access if no user logged in */}
-                        {(!user.email) && (<MenuItem key='login' onClose={handleCloseMenu}>
+                        {(!user.email) && (<MenuItem key='login' onClick={handleCloseMenu}>
                             <NavLink to={"/login"}>Login</NavLink>
                         </MenuItem>)}
-                        <MenuItem key="inspector" onClose={handleCloseMenu}>
+                        <MenuItem key="inspector" onClick={handleCloseMenu}>
                             <NavLink to={"/inspector"}>Inspector</NavLink>
                         </MenuItem>
                     </Menu>
@@ -122,11 +122,14 @@ function MyAppBar(props) {
                         onClose={handleCloseMenu}
                     >
                         {/* items inside menu */}
-                        <MenuItem key="account" onClose={handleCloseMenu}>
+                        <MenuItem key="account" onClick={handleCloseMenu}>
                             <NavLink to={"/account"}>Account</NavLink>
                         </MenuItem>
-                        <MenuItem key="library" onClose={handleCloseMenu}>
+                        <MenuItem key="library" onClick={handleCloseMenu}>
                             <NavLink to={"/library"}>Library</NavLink>
+                        </MenuItem>
+                        <MenuItem key="logout" onClick={() => {handleCloseMenu(); handleUpdateUser({})}}>
+                            <NavLink to={"/"}>Logout</NavLink>
                         </MenuItem>
                     </Menu>
                 </Toolbar>
