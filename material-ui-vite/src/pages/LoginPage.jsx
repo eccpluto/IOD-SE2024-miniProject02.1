@@ -4,6 +4,7 @@ import Container from "@mui/material/Container"
 import Typography from "@mui/material/Typography"
 import Box from "@mui/material/Box"
 import useTheme from "@mui/material/styles/useTheme"
+import LoginForm from "../components/LoginForm"
 
 function LoginPage(props) {
     const theme = useTheme();
@@ -20,6 +21,7 @@ function LoginPage(props) {
                 }}>
                     Login
                 </Typography>
+                <LoginForm/>
             </Box>
         </Container>
     )

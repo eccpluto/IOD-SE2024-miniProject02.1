@@ -10,10 +10,11 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { NavLink } from 'react-router-dom';
 import Typography from '@mui/material/Typography';
+import { useUserContext } from '../context/UserContext';
 
 function MyAppBar(props) {
     const theme = useTheme();
-    const user = {};
+    const { user, handleUpdateUser } = useUserContext();
 
     // anchor state for popup menus
     const [anchorElMainMenu, setAnchorElMainMenu] = useState(null);
@@ -64,7 +65,7 @@ function MyAppBar(props) {
                             <NavLink to={"/"}>Home</NavLink>
                         </MenuItem>
                         {/* only enable login page access if no user logged in */}
-                        {!(user.auth) && (<MenuItem key='login' onClose={handleCloseMenu}>
+                        {(!user.email) && (<MenuItem key='login' onClose={handleCloseMenu}>
                             <NavLink to={"/login"}>Login</NavLink>
                         </MenuItem>)}
                     </Menu>
@@ -88,16 +89,19 @@ function MyAppBar(props) {
                     </Typography>
                     {/* diplay the account button if the userContext indicates
                     the user has logged in TODO */}
-                    <IconButton
-                        size="large"
-                        aria-label="account menu"
-                        aria-controls='menu-account'
-                        aria-haspopup="true"
-                        onClick={handleAccountMenu}
-                        color='inherit'
-                    >
-                        <AccountCircle />
-                    </IconButton>
+                    {(user.email) && (
+
+                        <IconButton
+                            size="large"
+                            aria-label="account menu"
+                            aria-controls='menu-account'
+                            aria-haspopup="true"
+                            onClick={handleAccountMenu}
+                            color='inherit'
+                        >
+                            <AccountCircle />
+                        </IconButton>
+                    )}
                     {/* menu openable inside Toolbar */}
                     <Menu
                         id="account-menu"
