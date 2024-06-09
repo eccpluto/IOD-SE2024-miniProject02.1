@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 
 function MyAppBar(props) {
     const theme = useTheme();
+    const user = {};
 
     // anchor state for popup menus
     const [anchorElMainMenu, setAnchorElMainMenu] = useState(null);
@@ -62,6 +63,10 @@ function MyAppBar(props) {
                         <MenuItem key="home" onClose={handleCloseMenu}>
                             <NavLink to={"/"}>Home</NavLink>
                         </MenuItem>
+                        {/* only enable login page access if no user logged in */}
+                        {!(user.auth) && (<MenuItem key='login' onClose={handleCloseMenu}>
+                            <NavLink to={"/login"}>Login</NavLink>
+                        </MenuItem>)}
                     </Menu>
                     <Typography
                         variant="h6"
