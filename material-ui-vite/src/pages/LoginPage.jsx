@@ -3,6 +3,7 @@ import Typography from "@mui/material/Typography"
 import Box from "@mui/material/Box"
 import useTheme from "@mui/material/styles/useTheme"
 import LoginForm from "../components/LoginForm"
+import TitleDisplayer from "../components/TitleDisplayer"
 
 function LoginPage(props) {
     const theme = useTheme();
@@ -14,12 +15,7 @@ function LoginPage(props) {
                 bgcolor:    theme.palette.secondary.main,
                 borderRadius: 4,
             }}>
-                <Typography variant="h4" component="h1" sx={{
-                    mb: 2,
-                    color: theme.palette.primary.main,
-                }}>
-                    Login
-                </Typography>
+                <TitleDisplayer title='Login' color={theme.palette.primary.main}/>
                 <LoginForm/>
             </Box>
         </Container>

@@ -2,6 +2,7 @@ import Container from "@mui/material/Container"
 import Typography from "@mui/material/Typography"
 import Box from "@mui/material/Box"
 import useTheme from "@mui/material/styles/useTheme"
+import TitleDisplayer from "../components/TitleDisplayer";
 
 function InspectorPage(props) {
     const theme = useTheme();
@@ -13,12 +14,7 @@ function InspectorPage(props) {
                 bgcolor:    theme.palette.secondary.main,
                 borderRadius: 4,
             }}>
-                <Typography variant="h4" component="h1" sx={{
-                    mb: 2,
-                    color: theme.palette.primary.main,
-                }}>
-                    Inspector
-                </Typography>
+                <TitleDisplayer title="Inspector" color={theme.palette.primary.main}/>
             </Box>
         </Container>
     )

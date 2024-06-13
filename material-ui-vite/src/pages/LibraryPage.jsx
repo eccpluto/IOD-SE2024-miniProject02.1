@@ -3,6 +3,7 @@ import Typography from "@mui/material/Typography"
 import Box from "@mui/material/Box"
 import useTheme from "@mui/material/styles/useTheme"
 import VirtualisedTable from "../components/VirtualisedTable"
+import TitleDisplayer from "../components/TitleDisplayer"
 
 function LibraryPage(props) {
     const theme = useTheme();
@@ -14,12 +15,7 @@ function LibraryPage(props) {
                 bgcolor:    theme.palette.secondary.main,
                 borderRadius: 4,
             }}>
-                <Typography variant="h4" component="h1" sx={{
-                    mb: 2,
-                    color: theme.palette.primary.main,
-                }}>
-                    Library
-                </Typography>
+                <TitleDisplayer titlee="Library" color={theme.palette.primary.main}/>
                 <VirtualisedTable></VirtualisedTable>
                 {/* <Copyright /> */}
             </Box>
