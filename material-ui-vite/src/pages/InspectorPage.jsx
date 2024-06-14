@@ -4,6 +4,7 @@ import Box from "@mui/material/Box"
 import useTheme from "@mui/material/styles/useTheme"
 import TitleDisplayer from "../components/TitleDisplayer"
 import StockSearchInput from "../components/StockSearchInput"
+import QueryResults from "../components/QueryResults"
 
 /**
  * 
@@ -22,11 +23,13 @@ function InspectorPage(props) {
             <Box sx={{
                 my: 4,
                 p: 2,
-                bgcolor:    theme.palette.secondary.main,
+                bgcolor: theme.palette.secondary.main,
                 borderRadius: 4,
             }}>
-                <TitleDisplayer title="Inspector" color={theme.palette.primary.main}/>
-                <StockSearchInput searchCallback = {handleSearch}/>
+                <TitleDisplayer title="Inspector" color={theme.palette.primary.main} />
+                <StockSearchInput searchCallback={handleSearch} />
+                {/* Display QueryResults component if there is a query */}
+                {(query != '') && (<QueryResults query={query} />)};
             </Box>
         </Container>
     )
