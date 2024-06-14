@@ -1,0 +1,10 @@
+{
+    "library": [
+        "bitcoin",
+        "dogecoin",
+        "ethereum",
+        "xrp",
+        "cardano",
+        "chainlink"
+    ]
+}

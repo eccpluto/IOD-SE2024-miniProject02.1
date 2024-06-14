@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App';
 import theme from './theme';
 import { UserProvider } from './context/UserContext';
+import { DataProvider } from './context/DataContext';
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
@@ -16,9 +17,11 @@ root.render(
       {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
       <CssBaseline />
       <UserProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
+        <DataProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </DataProvider>
       </UserProvider>
     </ThemeProvider>
     ,
