@@ -15,7 +15,7 @@ function LibraryPage(props) {
                 bgcolor:    theme.palette.secondary.main,
                 borderRadius: 4,
             }}>
-                <TitleDisplayer titlee="Library" color={theme.palette.primary.main}/>
+                <TitleDisplayer title="Library" color={theme.palette.primary.main}/>
                 <LibraryTable/>
                 {/* <Copyright /> */}
             </Box>
