@@ -1,0 +1,23 @@
+{
+    "users": [
+        {
+            "email": "tyler@gmail.com",
+            "library": [
+                "bitcoin",
+                "dogecoin",
+                "ethereum",
+                "xrp",
+                "cardano",
+                "chainlink"
+            ]
+        },
+        {
+            "email": "helena@msn.com",
+            "library": []
+        },
+        {
+            "email": "slater@fbi.com",
+            "library": []
+        }
+    ]
+}
