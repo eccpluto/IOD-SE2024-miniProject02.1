@@ -2,7 +2,7 @@ export default function useGetCandle(props) {
     // base is the API endpoint that returns the candlestick date for a particular asset,
     // given an exchange, interval, baseId (like currency) and quoteId (what you are interested in).
     // e.g. api.coincap.io/v2/candles?exchange=poloniex&interval=h8&baseId=ethereum&quoteId=bitcoin
-    const BASE_URL = 'api.coincap.io/v2/candles?exchange='
+    const BASE_URL = 'https://api.coincap.io/v2/candles?exchange='
 
     /**
      * 
