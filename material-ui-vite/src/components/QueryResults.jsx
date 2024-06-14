@@ -1,4 +1,5 @@
 import useGetAssetByID from "../hooks/useGetAssetByID"
+import StockCard from "./StockCard";
 
 export default function QueryResults(props) {
 
@@ -13,17 +14,18 @@ export default function QueryResults(props) {
     console.log(isLoading)
     console.log(`data is: ${data}`)
 
-    if(isLoading) return (
+    if (isLoading) return (
         <p> Loading ...</p>
     )
-    if(!isLoading && data.error) return (
+    if (!isLoading && data.error) return (
         <p> Error: {props.query} was not a valid search.</p>
     )
 
-    return(
+    return (
         <>
-        {
-            console.log(data)
-        }        </>
+            <StockCard stockDetails={data}/>
+            {
+                console.log(data)
+            }        </>
     )
 }
