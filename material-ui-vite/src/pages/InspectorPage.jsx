@@ -12,7 +12,11 @@ import StockSearchInput from "../components/StockSearchInput"
  */
 function InspectorPage(props) {
     const theme = useTheme();
-    const stockData = use
+
+    const handleSearch = (query) => {
+        console.log(`handling search for: ${query}`);
+    }
+
     return (
         <Container maxWidth="xl">
             <Box sx={{
@@ -22,7 +26,7 @@ function InspectorPage(props) {
                 borderRadius: 4,
             }}>
                 <TitleDisplayer title="Inspector" color={theme.palette.primary.main}/>
-                <StockSearchInput/>
+                <StockSearchInput searchCallback = {handleSearch}/>
             </Box>
         </Container>
     )
