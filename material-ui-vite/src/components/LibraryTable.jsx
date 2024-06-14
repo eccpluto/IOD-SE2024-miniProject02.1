@@ -7,6 +7,9 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+// import { useUserContext } from '../context/UserContext';
+
+// const user = useUserContext();
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -28,20 +31,19 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
+function createData(name, symbol, percentage24hr, supply, explorer) {
+  return { name, symbol, percentage24hr, supply, explorer };
 }
 
+// hardcoded mock data should be pulled in from mockUserData depending on account
 const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('Bitcoin', 'BTC', "-1.7763528139022236", "19712118.0000000000000000", "https://blockchain.info/"),
+  createData('Dogecoin', 'DOGE', "-6.1229053093901797", 	"144709666383.7052300000000000","http://dogechain.info/chain/Dogecoin"),
+  createData('XRP', 'XRP', "556192492.6247483944054671", "45404028640.0000000000000000", "https://xrpcharts.ripple.com/#/graph/"),
 ];
 
 export default function LibraryTable(props) {
-  data = props.data;
+  // data = props.data;
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
@@ -49,21 +51,21 @@ export default function LibraryTable(props) {
           <TableRow>
             <StyledTableCell>Name</StyledTableCell>
             <StyledTableCell align="right">Symbol</StyledTableCell>
-            <StyledTableCell align="right">24Hr</StyledTableCell>
-            <StyledTableCell align="right">Supply&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Explorer&nbsp;(g)</StyledTableCell>
+            <StyledTableCell align="right">Delta 24Hr</StyledTableCell>
+            <StyledTableCell align="right">Supply</StyledTableCell>
+            <StyledTableCell align="right">Explorer</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
             <StyledTableRow key={row.name}>
               <StyledTableCell component="th" scope="row">
-                {data.symbol.name}
+                {row.name}
               </StyledTableCell>
-              <StyledTableCell align="right">{data.symbol}</StyledTableCell>
-              <StyledTableCell align="right">{data.changePercent24Hr}</StyledTableCell>
-              <StyledTableCell align="right">{data.supply}</StyledTableCell>
-              <StyledTableCell align="right">{data.explorer}</StyledTableCell>
+              <StyledTableCell align="right">{row.symbol}</StyledTableCell>
+              <StyledTableCell align="right">{row.percentage24hr}</StyledTableCell>
+              <StyledTableCell align="right">{row.supply}</StyledTableCell>
+              <StyledTableCell align="right">{row.explorer}</StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>

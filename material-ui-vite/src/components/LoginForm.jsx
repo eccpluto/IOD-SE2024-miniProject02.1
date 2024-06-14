@@ -47,7 +47,7 @@ export default function LoginForm(props) {
     if (user.email) return (
         <><p>Welcome {user.email}!</p>
             <button onClick={
-                () => {handleUpdateUser({}); setSubmitResult('')}
+                () => { handleUpdateUser({}); setSubmitResult('') }
             }>Log Out</button>
         </>
     );
@@ -60,12 +60,13 @@ export default function LoginForm(props) {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
+                    bgcolor: theme.palette.secondary.main
                 }}
             >
                 <Avatar sx={{ m: 1, bgcolor: theme.palette.primary.main }}>
                     <LockOutlinedIcon />
                 </Avatar>
-                <Typography component="h1" variant="h5">
+                <Typography component="h1" variant="h5" color={theme.palette.tertiary.main}>
                     Sign in
                 </Typography>
                 {submitResult}

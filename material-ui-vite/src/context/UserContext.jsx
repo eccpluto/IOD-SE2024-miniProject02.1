@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import users from '../data/mockUsers.json'
 
 const UserContext = createContext();
 
@@ -9,6 +10,12 @@ export const UserProvider = (props) => {
 
     function validate({email, password}) {
         // TODO validation with local JSON
+        // let isValidated = false;
+        // const foundUser = Array(users).find(user => (user.email == email));
+        // if(foundUser && (foundUser.password == password)) {
+        //     isValidated = true;
+        // }
+        // return isValidated;
         return true;
     }
 
