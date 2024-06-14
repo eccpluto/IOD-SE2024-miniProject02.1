@@ -12,8 +12,8 @@ export default function Copyright() {
       }}
     >
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link color="inherit" href="#">
+        Parent Website
       </Link>{' '}
       {new Date().getFullYear()}.
     </Typography>

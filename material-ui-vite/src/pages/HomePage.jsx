@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography"
 import Box from "@mui/material/Box"
 import useTheme from "@mui/material/styles/useTheme"
 import TitleDisplayer from "../components/TitleDisplayer";
+import Copyright from "../components/Copyright";
 
 function HomePage(props) {
     const theme = useTheme();
@@ -16,7 +17,10 @@ function HomePage(props) {
                 borderRadius: 4,
             }}>
                 <TitleDisplayer title='Perspector' color={theme.palette.primary.main}/>
-                {/* <Copyright /> */}
+                <Typography sx={{ mb: 1.5, textAlign: "center" }} color="text.secondary">
+                    Perspector is a browser and inspection tool for blockchain securities.
+                </Typography>
+                <Copyright />
             </Box>
         </Container>
     )
