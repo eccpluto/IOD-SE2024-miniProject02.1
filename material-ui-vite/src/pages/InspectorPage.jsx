@@ -5,6 +5,7 @@ import useTheme from "@mui/material/styles/useTheme"
 import TitleDisplayer from "../components/TitleDisplayer"
 import StockSearchInput from "../components/StockSearchInput"
 import QueryResults from "../components/QueryResults"
+import { useState } from "react"
 
 /**
  * 
@@ -14,8 +15,11 @@ import QueryResults from "../components/QueryResults"
 function InspectorPage(props) {
     const theme = useTheme();
 
+    const [query, setQuery] = useState('');
+
     const handleSearch = (query) => {
-        console.log(`handling search for: ${query}`);
+        console.log(`setting query to: ${query}`);
+        setQuery(query);
     }
 
     return (
@@ -28,8 +32,9 @@ function InspectorPage(props) {
             }}>
                 <TitleDisplayer title="Inspector" color={theme.palette.primary.main} />
                 <StockSearchInput searchCallback={handleSearch} />
+                {/* {console.log(query)} */}
                 {/* Display QueryResults component if there is a query */}
-                {(query != '') && (<QueryResults query={query} />)};
+                {(query != '') && (<QueryResults query={query} />)}
             </Box>
         </Container>
     )

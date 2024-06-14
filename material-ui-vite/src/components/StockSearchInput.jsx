@@ -7,13 +7,14 @@ export default function StockSearchInput(props) {
 
     const [query, setQuery] = useState('');
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
         console.log('submitting query.')
         props.searchCallback(query);
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={(e) => handleSubmit(e)}>
             <TextField
                 id="searchBar"
                 value={query}
